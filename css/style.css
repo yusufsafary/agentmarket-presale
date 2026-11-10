@@ -76,18 +76,19 @@ b, strong { font-weight: 700; }
   0%, 100% { transform: rotate(2deg); }
   50% { transform: rotate(-2deg); }
 }
-.brand-text {
-  font-family: var(--display); font-weight: 800; font-size: 17px;
-  letter-spacing: .04em; white-space: nowrap;
-  background: linear-gradient(100deg, #fbf3e8 0%, #fbf3e8 38%, var(--orange) 50%, #fbf3e8 62%, #fbf3e8 100%);
-  background-size: 230% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+.brand-wordwrap {
+  position: relative; display: inline-flex; overflow: hidden; border-radius: 3px;
+}
+.brand-word { display: block; height: 13.5px; width: auto; }
+.brand-wordwrap::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(100deg, transparent 38%, rgba(244, 166, 110, .5) 50%, transparent 62%);
+  transform: translateX(-130%);
   animation: brandSheen 6.5s ease-in-out infinite;
 }
 @keyframes brandSheen {
-  0% { background-position: 115% 0; }
-  30%, 100% { background-position: -115% 0; }
+  0% { transform: translateX(-130%); }
+  30%, 100% { transform: translateX(130%); }
 }
 .collar .links { position: relative; display: flex; align-items: center; flex-wrap: nowrap; }
 .collar a.link {
@@ -570,5 +571,5 @@ b, strong { font-weight: 700; }
   .drop-btn { flex: 1 1 auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .brand-mark, .brand-text, .art-stage img.art-img, .art-glow, .aid-card, .go-btn:not(:disabled):after { animation: none; }
+  .brand-mark, .brand-wordwrap::after, .art-stage img.art-img, .art-glow, .aid-card, .go-btn:not(:disabled):after { animation: none; }
 }
