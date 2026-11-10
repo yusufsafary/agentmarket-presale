@@ -501,6 +501,7 @@ b, strong { font-weight: 700; }
 .agm-amt input { flex: 1; min-width: 0; text-align: right; background: none; border: 0; outline: 0; font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--ink); }
 .agm-amt .coin { font-weight: 700; flex: none; }
 .coin-ic { width: 22px; height: 22px; border-radius: 50%; flex: none; display: inline-block; }
+.coin-ic-s { width: 15px; height: 15px; border-radius: 50%; vertical-align: -2px; margin-right: 5px; }
 .f-coin { align-items: center; }
 .f-coin .coin-ic, .agm-amt .coin .coin-ic { vertical-align: middle; }
 .agm-amt .coin, #payCoin { display: inline-flex; align-items: center; gap: 7px; }
