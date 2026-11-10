@@ -299,3 +299,29 @@ footer p { margin: 4px 0; word-break: break-all; }
 .timeline { margin: 16px 0; }
 .timeline li { list-style: none; border-left: 3px solid var(--amber); padding: 4px 0 16px 18px; color: var(--dim); }
 .timeline li strong { color: var(--cream); display: block; font-family: "Fraunces", serif; font-size: 19px; margin-bottom: 4px; }
+
+/* Animated logo (v5): hanging awning mark + gold sheen sweep */
+.brand { display: inline-flex; align-items: center; gap: 9px; }
+.brand-mark {
+  width: 27px; height: 27px; flex: none;
+  transform-origin: 50% 0;
+  animation: brandSway 5.2s ease-in-out infinite;
+}
+@keyframes brandSway {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+}
+.brand-text {
+  background: linear-gradient(100deg, #f2c230 0%, #f2c230 38%, #fff3c4 50%, #f2c230 62%, #f2c230 100%);
+  background-size: 230% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: brandSheen 6.5s ease-in-out infinite;
+}
+@keyframes brandSheen {
+  0% { background-position: 115% 0; }
+  30%, 100% { background-position: -115% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark, .brand-text { animation: none; }
+}
