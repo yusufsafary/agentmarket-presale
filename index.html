@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..800&family=Funnel+Sans:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=10">
 <link rel="icon" type="image/svg+xml" href="img/logo.svg">
 </head>
 <body>
@@ -70,14 +70,14 @@
 
       <div class="console ps-console" id="buy">
         <div class="pay-tabs" id="payTabs" role="tablist">
-          <button type="button" data-t="BNB" aria-selected="true">BNB</button>
-          <button type="button" data-t="USDT" aria-selected="false">USDT</button>
+          <button type="button" data-t="BNB" aria-selected="true"><img class="coin-ic" src="img/bnb.png" alt="">BNB</button>
+          <button type="button" data-t="USDT" aria-selected="false"><img class="coin-ic" src="img/usdt.png" alt="">USDT</button>
         </div>
         <div class="field">
           <div class="f-top"><span>You pay</span><b id="bal">Balance –</b></div>
           <div class="f-row">
             <input id="payIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
-            <span class="f-coin" id="payCoin"><b>BNB</b></span>
+            <span class="f-coin" id="payCoin"><img class="coin-ic" src="img/bnb.png" alt=""><b>BNB</b></span>
           </div>
           <div class="quick" id="quick"></div>
         </div>
@@ -86,7 +86,7 @@
           <div class="f-top"><span>You get</span><span>fixed rate</span></div>
           <div class="f-row">
             <output class="big" id="getOut">0</output>
-            <span class="f-coin">$AMKT</span>
+            <span class="f-coin"><img class="coin-ic" src="img/amkt.png" alt="">$AMKT</span>
           </div>
         </div>
         <p class="rate" id="rate">1 BNB = <b class="num">20,000,000</b> $AMKT</p>
@@ -186,12 +186,12 @@ Steps:
       <li><b>Check, then sign</b>Your agent shows the transaction first. With USDT it asks for an approval, then the buy. The $AMKT is held for that wallet until claim.</li>
     </ol>
     <div class="agm-pay" id="agmPay">
-      <button type="button" data-t="BNB" aria-selected="true">BNB</button>
-      <button type="button" data-t="USDT" aria-selected="false">USDT</button>
+      <button type="button" data-t="BNB" aria-selected="true"><img class="coin-ic" src="img/bnb.png" alt="">BNB</button>
+      <button type="button" data-t="USDT" aria-selected="false"><img class="coin-ic" src="img/usdt.png" alt="">USDT</button>
     </div>
     <div class="agm-amt">
       <input id="agmIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
-      <span class="coin" id="agmCoin">BNB</span>
+      <span class="coin" id="agmCoin"><img class="coin-ic" src="img/bnb.png" alt="">BNB</span>
     </div>
     <div class="agm-qty" style="margin-top:10px">
       <span>You get</span>
@@ -206,7 +206,7 @@ Steps:
 </div>
 
 <script src="js/wallet.js?v=1"></script>
-<script src="js/app.js?v=2"></script>
+<script src="js/app.js?v=3"></script>
 <script src="js/bowl.js?v=7"></script>
 </body>
 </html>

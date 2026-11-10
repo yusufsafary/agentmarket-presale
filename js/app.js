@@ -172,7 +172,7 @@ $("payTabs").addEventListener("click", (ev) => {
   if (!btn) return;
   a.pay = btn.dataset.t;
   $("payTabs").querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
-  $("payCoin").innerHTML = `<b>${a.pay}</b>`;
+  $("payCoin").innerHTML = `<img class="coin-ic" src="img/${a.pay === "USDT" ? "usdt" : "bnb"}.png" alt=""><b>${a.pay}</b>`;
   payIn.value = "";
   render();
 });
@@ -264,7 +264,7 @@ async function doClaim() {
 const ag = { pay: "BNB" };
 function renderAgent() {
   $("agmPay").querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.t === ag.pay)));
-  $("agmCoin").textContent = ag.pay;
+  $("agmCoin").innerHTML = `<img class="coin-ic" src="img/${ag.pay === "USDT" ? "usdt" : "bnb"}.png" alt="">${ag.pay}`;
   const amt = Number(($("agmIn").value || "").replace(",", ".")) || 0;
   const got = getAmount(ag.pay, amt);
   set("agmGet", amt ? `${fmtNum(got, 0)} $AMKT` : "– $AMKT");
