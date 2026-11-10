@@ -573,3 +573,34 @@ b, strong { font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   .brand-mark, .brand-wordwrap::after, .art-stage img.art-img, .art-glow, .aid-card, .go-btn:not(:disabled):after { animation: none; }
 }
+
+
+/* ===== Footer columns + legal pages ===== */
+.foot-in { grid-template-columns: 1.25fr .55fr .6fr 1.3fr; gap: 44px; }
+.foot-col { display: grid; gap: 10px; align-content: start; justify-items: start; }
+.foot-col h4 { font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.foot-col > a { font-size: 15px; font-weight: 500; color: rgba(251, 243, 232, .78); transition: color .2s, transform .3s var(--spring); }
+.foot-col > a:hover { color: var(--orange); transform: translate(4px); }
+.foot-col > a.fc { display: grid; gap: 1px; }
+.foot-col > a.fc:hover { transform: none; }
+.foot-col .fc b { font-size: 13.5px; font-weight: 600; color: rgba(251, 243, 232, .92); transition: color .2s; }
+.foot-col .fc span { font-size: 12px; color: rgba(251, 243, 232, .5); word-break: break-all; }
+.foot-col .fc:hover b { color: var(--orange); }
+@media (max-width: 1080px) { .foot-in { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 920px) { .foot-in { grid-template-columns: 1fr; } }
+
+/* Legal and about pages: reading column */
+.doc { max-width: 760px; }
+.doc h1 { font-family: var(--display); font-weight: 800; font-size: clamp(42px, 6vw, 68px); line-height: .92; letter-spacing: -.04em; margin-top: 12px; }
+.doc h1 em { font-style: italic; color: var(--orange-2); }
+.doc .updated { margin-top: 14px; font-size: 13.5px; color: var(--mute); }
+.doc h2 { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.02em; line-height: 1.05; margin: 42px 0 12px; }
+.doc p { color: var(--ink-2); line-height: 1.65; margin-bottom: 14px; max-width: 68ch; }
+.doc p strong, .doc li strong { color: var(--ink); }
+.doc ul { margin: 0 0 16px 20px; color: var(--ink-2); line-height: 1.6; display: grid; gap: 7px; }
+.doc a { color: var(--orange-3); font-weight: 600; }
+.doc .kv { border-top: 1px solid var(--line); margin: 8px 0 20px; }
+.doc .kv > div { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.doc .kv span { color: var(--mute); }
+.doc .kv b { font-weight: 700; text-align: right; }
+.doc .addr { display: block; margin-top: 2px; font-size: 13px; color: var(--mute); word-break: break-all; font-weight: 500; }
