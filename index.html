@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$AMKT Presale · Agent Market</title>
+<meta name="description" content="Buy $AMKT in the Agent Market presale on BNB Chain. One rate, 20,000,000 AMKT per BNB. Pay with BNB or USDT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="icon" href="img/stall.jpg">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="https://agentmarket.exchange">AGENT MARKET</a>
+  <nav>
+    <a href="https://agentmarket.exchange#mint">Mint</a>
+    <a href="#top">Presale</a>
+    <a href="https://claim.agentmarket.exchange">Claim</a>
+  </nav>
+  <div class="slot" id="wallet-slot"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="kicker">PRESALE · BNB CHAIN</p>
+    <h1>$AMKT<br><em>presale</em>.</h1>
+    <p class="lede">One rate for everyone: <strong>20,000,000 $AMKT for every 1 BNB</strong>, until the pool runs dry. Pay with BNB, or with USDT converted at the live Chainlink BNB/USD price.</p>
+    <p class="lede"><span class="stat-num" id="soldPct">···</span> of the pool sold</p>
+    <div class="progress" aria-hidden="true"><i id="soldFill"></i></div>
+    <div class="cards">
+      <div class="card"><span class="card-num">1,000,000,000</span><span class="card-lab">Pool · $AMKT</span></div>
+      <div class="card"><span class="card-num">50 BNB</span><span class="card-lab">Raise at full pool</span></div>
+      <div class="card"><span class="card-num" id="st-status">···</span><span class="card-lab">Presale status</span></div>
+      <div class="card"><span class="card-num" id="st-countdown">···</span><span class="card-lab">Time left</span></div>
+    </div>
+  </section>
+
+  <section class="panel" id="buy">
+    <p class="kicker">BUY $AMKT</p>
+    <h2>Pay with BNB or USDT.</h2>
+    <div class="widget">
+      <div class="tabs" id="payTabs" role="tablist">
+        <button type="button" data-t="BNB" aria-selected="true">BNB</button>
+        <button type="button" data-t="USDT" aria-selected="false">USDT</button>
+      </div>
+      <div class="pay-box">
+        <div class="lab"><span>You pay</span><span id="bal">Balance –</span></div>
+        <div class="pay-in">
+          <input id="payIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
+          <span class="coin" id="payCoin"><b>BNB</b></span>
+        </div>
+        <div class="chips" id="quick"></div>
+      </div>
+      <div class="get-box">
+        <div class="lab"><span>You get</span></div>
+        <div class="get-num"><span id="getOut">0</span> <span style="font-size:20px">$AMKT</span></div>
+        <p class="rate-line" id="rate">1 BNB = <b class="num">20,000,000</b> $AMKT</p>
+      </div>
+      <button class="big-btn" id="buyBtn" type="button">Presale opens soon</button>
+      <button class="ghost-btn" id="agentBtn" type="button">Buy on Agent instead</button>
+      <p class="txline" id="txline" hidden></p>
+      <p class="note">Paid on BNB Chain. Gas is paid in BNB. Your $AMKT is held by the presale contract and claimed after the presale ends.</p>
+    </div>
+
+    <div class="facts">
+      <div><span>Rate</span><b>20,000,000 AMKT per BNB</b></div>
+      <div><span>Pool</span><b>1,000,000,000 AMKT</b></div>
+      <div><span>Pay with</span><b>BNB · USDT on BNB Chain</b></div>
+      <div><span>Duration</span><b>14 days from start</b></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <p class="kicker">WHAT HAPPENS NEXT</p>
+    <h2>From presale to claim.</h2>
+    <ol class="timeline">
+      <li><strong>Presale</strong>Buy $AMKT at the fixed rate with BNB or USDT while the 1,000,000,000 AMKT pool lasts. Every payment is forwarded to the project wallet in the same transaction.</li>
+      <li><strong>Claim opens</strong>When the presale ends, presale buyers claim the AMKT they bought, and Stall holders claim 25,000 $AMKT per Stall, on the claim page.</li>
+      <li><strong>Launchpad</strong>Stall holders get access to the Agent Market launchpad when it opens.</li>
+    </ol>
+    <p><a class="btn alt" href="https://agentmarket.exchange#mint">Mint a Stall</a>
+    <a class="btn alt" href="https://claim.agentmarket.exchange">Open the claim page</a></p>
+  </section>
+
+  <section class="panel">
+    <p class="kicker">AGENT PROMPT · PRESALE</p>
+    <h2>Or let your agent buy.</h2>
+    <div class="prompt-box">
+      <pre id="presale-prompt">You are my Binance Agentic Wallet agent. Buy $AMKT in the Agent Market presale on BNB Chain (chain ID 56).
+
+Presale contract: 0xA6Ef01e926eFbD35661e7B1d3E1CBeE360750b16
+
+Steps:
+1. Read isOpen() (selector 0x47535d7b). If it returns false, stop and tell me the presale is not open.
+2. To pay with BNB: call buyWithBNB() (selector 0x20f1fc61) with the BNB amount I gave you as the value. Rate: 1 BNB = 20,000,000 AMKT.
+3. To pay with USDT: first approve the presale contract to spend my USDT (USDT contract 0x55d398326f99059fF775485246999027B3197955, approve selector 0x095ea7b3), then call buyWithUSDT(usdtAmount) (selector 0xa7c60160). The contract converts USDT at the Chainlink BNB/USD price.
+4. Read bought(my wallet) (selector 0x667022fd) and tell me how much AMKT I will be able to claim after the presale ends.</pre>
+      <button class="copy-btn" data-copy="presale-prompt">Copy prompt</button>
+    </div>
+  </section>
+
+  <footer>
+    <p class="foot-title">AGENT MARKET · CONTRACTS</p>
+    <p>Presale and claim · 0xA6Ef01e926eFbD35661e7B1d3E1CBeE360750b16</p>
+    <p>Stall (NFT) · 0xE3dE7fD0d12cFF4a46d8Bf702Ab593B6f921b308</p>
+    <p>$AMKT (token) · 0x31BBB7A5614D0eD465a93d1BAFCE28CE0225cDDe</p>
+    <p class="foot-note">Buy on this page with your wallet, or through your Binance Agentic Wallet agent. presale.agentmarket.exchange</p>
+  </footer>
+</main>
+
+<div class="agm" id="agm" hidden>
+  <div class="agm-card" role="dialog" aria-modal="true" aria-labelledby="agmT">
+    <div class="agm-h">
+      <div><p class="kicker">Buy on Agent</p><h3 id="agmT">Let your agent buy $AMKT.</h3></div>
+      <button class="agm-x" id="agmX" type="button" aria-label="Close">✕</button>
+    </div>
+    <ol class="agm-steps">
+      <li><b>Open your agent</b>The AI agent that runs your wallet on BNB Chain.</li>
+      <li><b>Send it the prompt</b>Pick BNB or USDT and how much to pay, copy the prompt, paste it into the chat.</li>
+      <li><b>Check, then sign</b>Your agent shows the transaction first. With USDT it asks for an approval, then the buy. The $AMKT is held for that wallet until claim.</li>
+    </ol>
+    <div class="agm-qty">
+      <div class="tabs" id="agmPay">
+        <button type="button" data-t="BNB" aria-selected="true">BNB</button>
+        <button type="button" data-t="USDT" aria-selected="false">USDT</button>
+      </div>
+      <strong class="num" id="agmGet">– $AMKT</strong>
+    </div>
+    <div class="pay-in">
+      <input id="agmIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
+      <span class="coin" id="agmCoin">BNB</span>
+    </div>
+    <div class="agm-prompt">
+      <pre id="agmPrompt"></pre>
+      <button class="copy-btn" id="agmCopy" type="button">Copy prompt</button>
+    </div>
+    <p class="agm-note">The $AMKT estimate uses the live Chainlink BNB/USD price and the fixed presale rate. Your agent reads the exact figures on chain before signing.</p>
+  </div>
+</div>
+
+<script src="js/wallet.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
