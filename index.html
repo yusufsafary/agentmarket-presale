@@ -5,88 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>$AMKT Presale · Agent Market</title>
 <meta name="description" content="Buy $AMKT in the Agent Market presale on BNB Chain. One rate, 20,000,000 AMKT per BNB. Pay with BNB or USDT.">
+<meta name="theme-color" content="#fbf3e8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..800&family=Funnel+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
 <link rel="icon" href="img/stall.jpg">
 </head>
 <body>
-<header class="top">
+<header class="collar">
+  <span class="stitch" aria-hidden="true"></span>
   <a class="brand" href="https://agentmarket.exchange"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><line x1="8" y1="1" x2="11" y2="10" stroke="#b8ab8d" stroke-width="1.7" stroke-linecap="round"/><line x1="28" y1="1" x2="25" y2="10" stroke="#b8ab8d" stroke-width="1.7" stroke-linecap="round"/><circle cx="18" cy="1.6" r="1.4" fill="#b8ab8d"/><path d="M4 10 H32 L28.6 20.4 H7.4 Z" fill="#e8a90c"/><path d="M9.8 10 H13 L14.2 20.4 H11.8 Z" fill="#f2c230"/><path d="M16.4 10 H19.6 L19.2 20.4 H16.8 Z" fill="#f2c230"/><path d="M23 10 H26.2 L24.2 20.4 H21.8 Z" fill="#f2c230"/><circle cx="9.5" cy="22.4" r="2.1" fill="#f2c230"/><circle cx="14.2" cy="22.4" r="2.1" fill="#e8a90c"/><circle cx="18.9" cy="22.4" r="2.1" fill="#f2c230"/><circle cx="23.6" cy="22.4" r="2.1" fill="#e8a90c"/><circle cx="28.3" cy="22.4" r="2.1" fill="#f2c230"/></svg><span class="brand-text">AGENT MARKET</span></a>
-  <nav>
-    <a href="https://agentmarket.exchange#mint">Mint</a>
-    <a href="#top">Presale</a>
-    <a href="https://claim.agentmarket.exchange">Claim</a>
+  <nav class="links">
+    <a class="link" href="https://agentmarket.exchange#mint">Mint</a>
+    <a class="link" href="#top" aria-current="page">Presale</a>
+    <a class="link" href="https://claim.agentmarket.exchange">Claim</a>
   </nav>
-  <div class="slot" id="wallet-slot"></div>
+  <div class="right"><div class="slot" id="wallet-slot"></div></div>
 </header>
 
-<main id="top">
-  <section class="hero">
-    <p class="kicker">PRESALE · BNB CHAIN</p>
-    <h1>$AMKT<br><em>presale</em>.</h1>
-    <p class="lede">One rate for everyone: <strong>20,000,000 $AMKT for every 1 BNB</strong>, until the pool runs dry. Pay with BNB, or with USDT converted at the live Chainlink BNB/USD price.</p>
-    <p class="lede"><span class="stat-num" id="soldPct">···</span> of the pool sold</p>
-    <div class="progress" aria-hidden="true"><i id="soldFill"></i></div>
-    <div class="cards">
-      <div class="card"><span class="card-num">1,000,000,000</span><span class="card-lab">Pool · $AMKT</span></div>
-      <div class="card"><span class="card-num">50 BNB</span><span class="card-lab">Raise at full pool</span></div>
-      <div class="card"><span class="card-num" id="st-status">···</span><span class="card-lab">Presale status</span></div>
-      <div class="card"><span class="card-num" id="st-countdown">···</span><span class="card-lab">Time left</span></div>
+<main class="dp" id="top">
+  <section class="ps-hero">
+    <div class="ps-head">
+      <span class="kicker">Presale · BNB Chain</span>
+      <h1>$AMKT <em>presale</em>.</h1>
+      <p class="lead">One rate for everyone: <b>20,000,000 $AMKT for every 1 BNB</b>, until the pool runs dry. Pay with BNB, or with USDT converted at the live Chainlink BNB/USD price.</p>
     </div>
-  </section>
-
-  <section class="panel" id="buy">
-    <p class="kicker">BUY $AMKT</p>
-    <h2>Pay with BNB or USDT.</h2>
-    <div class="widget">
-      <div class="tabs" id="payTabs" role="tablist">
-        <button type="button" data-t="BNB" aria-selected="true">BNB</button>
-        <button type="button" data-t="USDT" aria-selected="false">USDT</button>
-      </div>
-      <div class="pay-box">
-        <div class="lab"><span>You pay</span><span id="bal">Balance –</span></div>
-        <div class="pay-in">
-          <input id="payIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
-          <span class="coin" id="payCoin"><b>BNB</b></span>
+    <div class="ps-grid">
+      <div class="bowl">
+        <svg class="bowl-svg" viewBox="0 0 320 320" aria-hidden="true">
+          <defs>
+            <linearGradient id="bowlGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4a66e"/>
+              <stop offset="1" stop-color="#c96d34"/>
+            </linearGradient>
+          </defs>
+          <circle class="bowl-track" cx="160" cy="160" r="140"></circle>
+          <circle class="bowl-arc" id="bowlArc" cx="160" cy="160" r="140" stroke-dasharray="879.6" stroke-dashoffset="879.6"></circle>
+        </svg>
+        <div class="bowl-t"><span id="soldPct">···</span><small>of the pool sold</small></div>
+        <div class="progress">
+          <div class="pg-bar"><i id="soldFill"></i></div>
         </div>
-        <div class="chips" id="quick"></div>
+        <div class="bowl-cap">
+          <div><i>Pool</i><b>1,000,000,000</b><small>$AMKT</small></div>
+          <div><i>Raise at full pool</i><b>50 BNB</b><small>at the fixed rate</small></div>
+          <div><i>Presale status</i><b id="st-status">···</b></div>
+          <div><i>Time left</i><b class="num" id="st-countdown">···</b></div>
+        </div>
       </div>
-      <div class="get-box">
-        <div class="lab"><span>You get</span></div>
-        <div class="get-num"><span id="getOut">0</span> <span style="font-size:20px">$AMKT</span></div>
-        <p class="rate-line" id="rate">1 BNB = <b class="num">20,000,000</b> $AMKT</p>
-      </div>
-      <button class="big-btn" id="buyBtn" type="button">Presale opens soon</button>
-      <button class="ghost-btn" id="agentBtn" type="button">Buy on Agent instead</button>
-      <p class="txline" id="txline" hidden></p>
-      <p class="note">Paid on BNB Chain. Gas is paid in BNB. Your $AMKT is held by the presale contract and claimed after the presale ends.</p>
-    </div>
 
-    <div class="facts">
-      <div><span>Rate</span><b>20,000,000 AMKT per BNB</b></div>
-      <div><span>Pool</span><b>1,000,000,000 AMKT</b></div>
-      <div><span>Pay with</span><b>BNB · USDT on BNB Chain</b></div>
-      <div><span>Duration</span><b>14 days from start</b></div>
+      <div class="console ps-console" id="buy">
+        <div class="pay-tabs" id="payTabs" role="tablist">
+          <button type="button" data-t="BNB" aria-selected="true">BNB</button>
+          <button type="button" data-t="USDT" aria-selected="false">USDT</button>
+        </div>
+        <div class="field">
+          <div class="f-top"><span>You pay</span><b id="bal">Balance –</b></div>
+          <div class="f-row">
+            <input id="payIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
+            <span class="f-coin" id="payCoin"><b>BNB</b></span>
+          </div>
+          <div class="quick" id="quick"></div>
+        </div>
+        <div class="arrow-paw" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4v15m0 0 6-6m-6 6-6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="field out">
+          <div class="f-top"><span>You get</span><span>fixed rate</span></div>
+          <div class="f-row">
+            <output class="big" id="getOut">0</output>
+            <span class="f-coin">$AMKT</span>
+          </div>
+        </div>
+        <p class="rate" id="rate">1 BNB = <b class="num">20,000,000</b> $AMKT</p>
+        <div class="go-row">
+          <button class="go-btn" id="buyBtn" type="button">Presale opens soon</button>
+          <button class="agent-btn" id="agentBtn" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5c2.5.6 4 2.6 4 5.2 0 3-2.4 4.8-5 4.8H8c-2.6 0-5-1.8-5-4.8C3 10.6 4.5 8.6 7 8a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="13" r="1.1" fill="currentColor"/><circle cx="15" cy="13" r="1.1" fill="currentColor"/></svg>Buy on Agent</button>
+        </div>
+        <p class="txline" id="txline" hidden></p>
+        <p class="fine">Paid on BNB Chain. Gas is paid in BNB. Your $AMKT is held by the presale contract and claimed after the presale ends.</p>
+      </div>
     </div>
   </section>
 
-  <section class="panel">
-    <p class="kicker">WHAT HAPPENS NEXT</p>
-    <h2>From presale to claim.</h2>
-    <ol class="timeline">
-      <li><strong>Presale</strong>Buy $AMKT at the fixed rate with BNB or USDT while the 1,000,000,000 AMKT pool lasts. Every payment is forwarded to the project wallet in the same transaction.</li>
-      <li><strong>Claim opens</strong>When the presale ends, presale buyers claim the AMKT they bought, and Stall holders claim 25,000 $AMKT per Stall, on the claim page.</li>
-      <li><strong>Launchpad</strong>Stall holders get access to the Agent Market launchpad when it opens.</li>
+  <section class="facts-band">
+    <div><i>Rate</i><b>20,000,000</b><small>AMKT per 1 BNB</small></div>
+    <div><i>Pool</i><b>1,000,000,000</b><small>$AMKT</small></div>
+    <div><i>Pay with</i><b>BNB · USDT</b><small>on BNB Chain</small></div>
+    <div><i>Duration</i><b>14 days</b><small>from the start</small></div>
+  </section>
+
+  <section class="road">
+    <div class="sec-h">
+      <span class="kicker">What happens next</span>
+      <h2>From presale to claim.</h2>
+    </div>
+    <ol class="road-l">
+      <li><span class="rd-dot"></span><b>Presale</b><p>Buy $AMKT at the fixed rate with BNB or USDT while the 1,000,000,000 AMKT pool lasts. Every payment is forwarded to the project wallet in the same transaction.</p></li>
+      <li><span class="rd-dot"></span><b>Claim opens</b><p>When the presale ends, presale buyers claim the AMKT they bought, and Stall holders claim 25,000 $AMKT per Stall, on the claim page.</p></li>
+      <li><span class="rd-dot"></span><b>Launchpad</b><p>Stall holders get access to the Agent Market launchpad when it opens.</p></li>
     </ol>
-    <p><a class="btn alt" href="https://agentmarket.exchange#mint">Mint a Stall</a>
-    <a class="btn alt" href="https://claim.agentmarket.exchange">Open the claim page</a></p>
+    <a class="side-link" href="https://agentmarket.exchange#mint">Mint a Stall first <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-7 7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </section>
 
-  <section class="panel">
-    <p class="kicker">AGENT PROMPT · PRESALE</p>
-    <h2>Or let your agent buy.</h2>
+  <section class="sec">
+    <div class="sec-h">
+      <span class="kicker">Agent prompt · Presale</span>
+      <h2>Or let your agent buy.</h2>
+    </div>
     <div class="prompt-box">
       <pre id="presale-prompt">You are my Binance Agentic Wallet agent. Buy $AMKT in the Agent Market presale on BNB Chain (chain ID 56).
 
@@ -100,20 +125,32 @@ Steps:
       <button class="copy-btn" data-copy="presale-prompt">Copy prompt</button>
     </div>
   </section>
-
-  <footer>
-    <p class="foot-title">AGENT MARKET · CONTRACTS</p>
-    <p>Presale and claim · 0xA6Ef01e926eFbD35661e7B1d3E1CBeE360750b16</p>
-    <p>Stall (NFT) · 0xE3dE7fD0d12cFF4a46d8Bf702Ab593B6f921b308</p>
-    <p>$AMKT (token) · 0x31BBB7A5614D0eD465a93d1BAFCE28CE0225cDDe</p>
-    <p class="foot-note">Buy on this page with your wallet, or through your Binance Agentic Wallet agent. presale.agentmarket.exchange</p>
-  </footer>
 </main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="https://agentmarket.exchange"><svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><line x1="8" y1="1" x2="11" y2="10" stroke="#b8ab8d" stroke-width="1.7" stroke-linecap="round"/><line x1="28" y1="1" x2="25" y2="10" stroke="#b8ab8d" stroke-width="1.7" stroke-linecap="round"/><circle cx="18" cy="1.6" r="1.4" fill="#b8ab8d"/><path d="M4 10 H32 L28.6 20.4 H7.4 Z" fill="#e8a90c"/><path d="M9.8 10 H13 L14.2 20.4 H11.8 Z" fill="#f2c230"/><path d="M16.4 10 H19.6 L19.2 20.4 H16.8 Z" fill="#f2c230"/><path d="M23 10 H26.2 L24.2 20.4 H21.8 Z" fill="#f2c230"/><circle cx="9.5" cy="22.4" r="2.1" fill="#f2c230"/><circle cx="14.2" cy="22.4" r="2.1" fill="#e8a90c"/><circle cx="18.9" cy="22.4" r="2.1" fill="#f2c230"/><circle cx="23.6" cy="22.4" r="2.1" fill="#e8a90c"/><circle cx="28.3" cy="22.4" r="2.1" fill="#f2c230"/></svg><span class="brand-text">AGENT MARKET</span></a>
+      <p>Buy on this page with your wallet, or through your Binance Agentic Wallet agent.</p>
+      <div class="foot-contracts">
+        <span><b>Presale and claim</b> · 0xA6Ef01e926eFbD35661e7B1d3E1CBeE360750b16</span>
+        <span><b>Stall (NFT)</b> · 0xE3dE7fD0d12cFF4a46d8Bf702Ab593B6f921b308</span>
+        <span><b>$AMKT (token)</b> · 0x31BBB7A5614D0eD465a93d1BAFCE28CE0225cDDe</span>
+      </div>
+    </div>
+    <nav class="foot-links">
+      <a href="https://agentmarket.exchange#mint">Mint</a>
+      <a href="#top">Presale</a>
+      <a href="https://claim.agentmarket.exchange">Claim</a>
+    </nav>
+  </div>
+  <div class="foot-base"><span>presale.agentmarket.exchange</span><span>BNB Chain · Chain ID 56</span></div>
+</footer>
 
 <div class="agm" id="agm" hidden>
   <div class="agm-card" role="dialog" aria-modal="true" aria-labelledby="agmT">
     <div class="agm-h">
-      <div><p class="kicker">Buy on Agent</p><h3 id="agmT">Let your agent buy $AMKT.</h3></div>
+      <div><span class="kicker">Buy on Agent</span><h3 id="agmT">Let your agent buy $AMKT.</h3></div>
       <button class="agm-x" id="agmX" type="button" aria-label="Close">✕</button>
     </div>
     <ol class="agm-steps">
@@ -121,16 +158,17 @@ Steps:
       <li><b>Send it the prompt</b>Pick BNB or USDT and how much to pay, copy the prompt, paste it into the chat.</li>
       <li><b>Check, then sign</b>Your agent shows the transaction first. With USDT it asks for an approval, then the buy. The $AMKT is held for that wallet until claim.</li>
     </ol>
-    <div class="agm-qty">
-      <div class="tabs" id="agmPay">
-        <button type="button" data-t="BNB" aria-selected="true">BNB</button>
-        <button type="button" data-t="USDT" aria-selected="false">USDT</button>
-      </div>
-      <strong class="num" id="agmGet">– $AMKT</strong>
+    <div class="agm-pay" id="agmPay">
+      <button type="button" data-t="BNB" aria-selected="true">BNB</button>
+      <button type="button" data-t="USDT" aria-selected="false">USDT</button>
     </div>
-    <div class="pay-in">
+    <div class="agm-amt">
       <input id="agmIn" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
       <span class="coin" id="agmCoin">BNB</span>
+    </div>
+    <div class="agm-qty" style="margin-top:10px">
+      <span>You get</span>
+      <strong class="num" id="agmGet">– $AMKT</strong>
     </div>
     <div class="agm-prompt">
       <pre id="agmPrompt"></pre>
@@ -142,5 +180,6 @@ Steps:
 
 <script src="js/wallet.js?v=1"></script>
 <script src="js/app.js?v=2"></script>
+<script src="js/bowl.js?v=6"></script>
 </body>
 </html>
