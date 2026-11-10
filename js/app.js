@@ -128,8 +128,8 @@ function render() {
   const got = getAmount(a.pay, amt);
   set("getOut", fmtNum(got, 0));
   $("rate").innerHTML = a.pay === "USDT"
-    ? `1 USDT = <b class="num">${a.bnbUsd ? fmtNum(Number(RATE) / a.bnbUsd, 0) : "–"}</b> $AMKT · live Chainlink BNB/USD $${a.bnbUsd ? fmtNum(a.bnbUsd, 2) : "–"}`
-    : `1 BNB = <b class="num">20,000,000</b> $AMKT`;
+    ? `1 <img class="coin-ic" src="img/usdt.png" alt="">USDT = <b class="num">${a.bnbUsd ? fmtNum(Number(RATE) / a.bnbUsd, 0) : "–"}</b> <img class="coin-ic" src="img/amkt.png" alt="">$AMKT · live Chainlink BNB/USD $${a.bnbUsd ? fmtNum(a.bnbUsd, 2) : "–"}`
+    : `1 <img class="coin-ic" src="img/bnb.png" alt="">BNB = <b class="num">20,000,000</b> <img class="coin-ic" src="img/amkt.png" alt="">$AMKT`;
   const bal = a.bal[a.pay];
   set("bal", bal == null ? "Balance –" : `Balance ${fmtNum(bal, a.pay === "BNB" ? 4 : 2)}`);
   $("quick").innerHTML =
@@ -267,7 +267,7 @@ function renderAgent() {
   $("agmCoin").innerHTML = `<img class="coin-ic" src="img/${ag.pay === "USDT" ? "usdt" : "bnb"}.png" alt="">${ag.pay}`;
   const amt = Number(($("agmIn").value || "").replace(",", ".")) || 0;
   const got = getAmount(ag.pay, amt);
-  set("agmGet", amt ? `${fmtNum(got, 0)} $AMKT` : "– $AMKT");
+  $("agmGet").innerHTML = amt ? `${fmtNum(got, 0)} <img class="coin-ic" src="img/amkt.png" alt="">$AMKT` : `– <img class="coin-ic" src="img/amkt.png" alt="">$AMKT`;
   const amtTxt = amt ? String(amt) : "<amount>";
   const est = amt && got ? ` (about ${fmtNum(got, 0)} $AMKT)` : "";
   $("agmPrompt").textContent = ag.pay === "BNB"
