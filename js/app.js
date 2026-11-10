@@ -355,6 +355,6 @@ window.AMW.mountButton($("wallet-slot"));
 render();
 refresh();
 readPrice();
-setInterval(() => { if (!document.hidden) refresh(); }, 20000);
+setInterval(() => { if (!document.hidden) { refresh(); if (window.AMW.state.address) refreshBalances(); } }, 20000);
 setInterval(readPrice, 60000);
 setInterval(tick, 1000);
