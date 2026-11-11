@@ -98,11 +98,11 @@ b, strong { font-weight: 700; }
 }
 .collar a.link:hover, .collar a.link[aria-current] { color: var(--paper); background: rgba(251, 243, 232, .08); }
 .collar a.link[aria-current] { color: var(--orange); }
-.collar .right { position: relative; display: flex; align-items: center; gap: 4px; margin-left: 6px; }
+.collar .right { position: relative; display: flex; align-items: center; gap: 10px; margin-left: 10px; }
 .slot { display: flex; align-items: center; }
 .wallet-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 7px 14px; border-radius: 9px;
+  height: 34px; padding: 0 16px; border-radius: 10px;
   font-weight: 600; font-size: 14px; white-space: nowrap;
   background: var(--orange); color: var(--ink);
   transition: background .2s;
@@ -609,3 +609,33 @@ b, strong { font-weight: 700; }
 .doc .kv span { color: var(--mute); }
 .doc .kv b { font-weight: 700; text-align: right; }
 .doc .addr { display: block; margin-top: 2px; font-size: 13px; color: var(--mute); word-break: break-all; font-weight: 500; }
+
+/* ===== Header social cluster ===== */
+.soc-row { display: inline-flex; align-items: center; gap: 6px; padding-right: 10px; border-right: 1px solid rgba(251, 243, 232, .14); }
+.collar .soc-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(251, 243, 232, .20); background: rgba(251, 243, 232, .05); color: rgba(251, 243, 232, .88); transition: color .2s, border-color .2s, background .2s; }
+.collar .soc-btn:hover { color: var(--orange); border-color: rgba(244, 166, 110, .55); background: rgba(251, 243, 232, .09); }
+.collar .soc-btn svg { width: 16px; height: 16px; display: block; }
+@media (max-width: 860px) {
+  .collar .soc-btn { width: 32px; height: 32px; }
+  .soc-row { padding-right: 8px; }
+  .collar .wallet-btn { height: 32px; padding: 0 12px; font-size: 13.5px; }
+}
+
+@media (max-width: 480px) {
+  .brand-word { height: 11px; }
+  .collar .brand { gap: 7px; padding-right: 4px; }
+  .collar .soc-btn { width: 30px; height: 30px; border-radius: 9px; }
+  .collar .soc-btn svg { width: 15px; height: 15px; }
+  .collar .wallet-btn { height: 30px; padding: 0 11px; font-size: 13px; }
+  .collar .right { gap: 7px; margin-left: 4px; }
+  .soc-row { gap: 5px; padding-right: 7px; }
+}
+
+@media (max-width: 374px) {
+  .brand-word { height: 10px; }
+  .collar .brand { gap: 6px; }
+  .collar .soc-btn { width: 28px; height: 28px; }
+  .collar .wallet-btn { height: 28px; padding: 0 9px; font-size: 12.5px; }
+  .soc-row { gap: 4px; padding-right: 6px; }
+  .collar .right { gap: 6px; }
+}
